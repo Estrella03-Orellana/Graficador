@@ -1,0 +1,43 @@
+﻿@{
+    ViewData["Title"] = "Guía de Uso";
+}
+
+<div class="container py-5">
+    <h2 class="text-center mb-4">📘 Guía de Uso del Graficador</h2>
+
+    <div class="mb-4">
+        <p class="lead">
+            Esta aplicación te permite crear diversos tipos de gráficos de manera sencilla y personalizada. A continuación, te presentamos las funcionalidades disponibles:
+        </p>
+    </div>
+
+    <div class="row g-4">
+        <!-- Funcionalidad: Crear gráficos personalizados -->
+        <div class="col-md-4">
+            <div class="p-4 border rounded-4 bg-white shadow-sm h-100 transition-hover ">
+                <h5 class="fw-bold">🎨 Crear Gráficos Personalizados</h5>
+                <p>Elige entre una variedad de tipos de gráficos como barras, líneas, escalas y más, y personalízalos según tus necesidades.</p>
+            </div>
+        </div>
+
+        <!-- Funcionalidad: Ingresar datos -->
+        <div class="col-md-4">
+            <div class="p-4 border rounded-4 bg-white shadow-sm h-100 transition-hover">
+                <h5 class="fw-bold">📝 Ingresar Datos</h5>
+                <p>Introduce etiquetas y valores de manera sencilla para representar tus datos en los gráficos.</p>
+            </div>
+        </div>
+
+      
+        <div class="col-md-4">
+            <div class="p-4 border rounded-4 bg-white shadow-sm h-100 transition-hover">
+                <h5 class="fw-bold">📊 Visualizar Resultados</h5>
+                <p>Observa tus datos representados gráficamente y realiza ajustes en tiempo real para obtener la visualización deseada.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center mt-5">
+        <a asp-controller="Grafico" asp-action="IngresarDatos" class="btn btn-primary btn-lg">Comenzar a Crear un Gráfico</a>
+    </div>
+</div>

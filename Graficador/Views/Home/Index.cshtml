@@ -1,0 +1,42 @@
+﻿@{
+    ViewData["Title"] = "Inicio";
+}
+
+<div class="container py-5">
+    <div class="text-center mb-5">
+        <h1 class="display-4 fw-bold text-gradient">Bienvenido al Graficador</h1>
+        <p class="lead fw-bold fs-4 text-dark">
+            Transforma tus datos en visualizaciones claras, potentes y personalizables.
+        </p>
+    </div>
+
+    <div class="row g-4">
+        <!-- Tarjeta para crear un nuevo gráfico -->
+        <div class="col-md-6">
+            <div class="p-4 border rounded-4 bg-white shadow-lg h-100 transition-hover">
+                <div class="d-flex align-items-center mb-3">
+                    <i class="bi bi-bar-chart-fill fs-1 text-primary me-3"></i>
+                    <div>
+                        <h4 class="fw-semibold mb-1">Crear un nuevo gráfico</h4>
+                        <p class="text-muted mb-0">Accede al generador y empieza a personalizar tus visualizaciones.</p>
+                    </div>
+                </div>
+                <a asp-controller="Grafico" asp-action="IngresarDatos" class="btn btn-primary w-100 mt-3">Ir al generador</a>
+            </div>
+        </div>
+
+        <!-- Tarjeta para ver la guía de uso -->
+        <div class="col-md-6">
+            <div class="p-4 border rounded-4 bg-white shadow-lg h-100 transition-hover">
+                <div class="d-flex align-items-center mb-3">
+                    <i class="bi bi-info-circle-fill fs-1 text-info me-3"></i>
+                    <div>
+                        <h4 class="fw-semibold mb-1">¿Qué puedes hacer aquí?</h4>
+                        <p class="text-muted mb-0">Descubre las funcionalidades disponibles en esta aplicación de gráficos.</p>
+                    </div>
+                </div>
+                <a asp-controller="Home" asp-action="Privacy" class="btn btn-primary w-100 mt-3">Ver guía</a>
+            </div>
+        </div>
+    </div>
+</div>

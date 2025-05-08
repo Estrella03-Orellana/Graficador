@@ -1,0 +1,39 @@
+﻿@{
+
+    ViewData["Title"] = "Mostrar Gráfico";
+    var etiquetasJson = ViewBag.Etiquetas;
+    var valoresJson = ViewBag.Valores;
+    var tipoGrafico = ViewBag.TipoGrafico;
+    var tituloGrafico = ViewBag.TituloGrafico;
+    var borderRadius = ViewBag.BorderRadius;
+    var valoresInferioresJson = ViewBag.ValoresInferiores;
+    var valoresSuperioresJson = ViewBag.ValoresSuperiores;
+}
+
+<div class="container py-5">
+    <h2 class="text-center mb-4">@tituloGrafico </h2>
+
+    <div class="d-flex justify-content-center">
+        <div style="width: 600px; height: 400px;">
+            <canvas id="miGrafico"></canvas>
+        </div>
+    </div>
+    <div class="text-center mt-4">
+        <p><a asp-action="IngresarDatos" class="btn btn-outline-secondary btn-lg">↩️ Ingresar Nuevos Datos</a></p>
+    </div>
+</div>
+
+
+<script>
+    const config = {
+        etiquetas: @Html.Raw(etiquetasJson),
+        valores: @Html.Raw(valoresJson),
+        tipo: '@tipoGrafico',
+        titulo: '@tituloGrafico',
+        borderRadius: '@borderRadius',
+        valoresInferiores: @Html.Raw(valoresInferioresJson ?? "[]"),
+        valoresSuperiores: @Html.Raw(valoresSuperioresJson ?? "[]"),
+    };
+
+    inicializarGrafico(config);
+</script>

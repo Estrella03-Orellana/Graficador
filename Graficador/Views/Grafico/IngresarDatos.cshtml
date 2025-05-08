@@ -1,0 +1,54 @@
+﻿@model Graficador.Models.GraficoViewModel
+
+@{
+    ViewData["Title"] = "Ingresar Datos";
+}
+
+<div class="container py-5">
+    <h2 class="text-center mb-4"> 🎯 Ingresar Datos para el Gráfico</h2>
+
+    <form method="post" asp-action="MostrarGrafico" asp-controller="Grafico" class="px-md-5">
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label for="categoriaGrafico" class="form-label fw-bold">Categoría del Gráfico:</label>
+                <select id="categoriaGrafico" class="form-select">
+                    <option value="">Seleccionar Categoría</option>
+                    <option value="barras">Gráficos de Barras</option>
+                    <option value="lineas">Gráficos de Líneas</option>
+                    <option value="escalas">Gráficos de Escalas</option>
+                    <option value="otros">Otros Gráficos</option>
+                </select>
+            </div>
+
+            <div class="col-md-6">
+                <label for="tipoGrafico" class="form-label fw-bold">Tipo de Gráfico:</label>
+                <select id="tipoGrafico" name="TipoGrafico" class="form-select"></select>
+                <span asp-validation-for="TipoGrafico" class="text-danger small"></span>
+            </div>
+
+            <div class="mb-3">
+                <label for="TituloGrafico" class="form-label fw-bold"> Título del Gráfico</label>
+                <input type="text" name="TituloGrafico" id="TituloGrafico" class="form-control" value="@Model?.TituloGrafico"
+                    placeholder="Ej: Ventas Mensuales por Región" />
+            </div>
+        </div>
+
+        <div id="camposDatos" class="mb-4">
+        </div>
+
+        <div id="opcionesGrafico" class="mb-4">
+        </div>
+
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary btn-lg px-5">Generar Gráfico</button>
+        </div>
+
+    </form>
+</div>
+
+
+
+@section Scripts {
+    <script src="~/js/configuracionFormulario.js"></script>
+    <partial name="_ValidationScriptsPartial" />
+}

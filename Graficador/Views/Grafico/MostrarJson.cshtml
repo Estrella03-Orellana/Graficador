@@ -1,0 +1,49 @@
+﻿@model Graficador.Models.DatosGraficoJson
+@{
+    ViewBag.Title = "Visualizar gráfico desde JSON";
+}
+
+<div class="container py-5">
+    <h2 class="text-center mb-4">📊 Gráfico Generado desde Archivo JSON</h2>
+
+    <div class="card shadow-lg p-4">
+        <div style="width: 600px; height: 400px;">
+            <canvas id="miGrafico"></canvas>
+        </div>
+    </div>
+
+    <div class="text-center mt-4">
+        <a href="@Url.Action("SubirJson", "Grafico")" class="btn btn-outline-secondary">🔙 Volver a Subir otro Archivo</a>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const tipoGrafico = "@ViewBag.TipoGrafico";
+        const datos = @Html.Raw(ViewBag.DatosJson);
+
+        const ctx = document.getElementById('graficoJson').getContext('2d');
+
+        new Chart(ctx, {
+            type: tipoGrafico,
+            data: {
+                labels: datos.labels,
+                datasets: [{
+                    label: datos.label,
+                    data: datos.data,
+                    backgroundColor: datos.backgroundColor || 'rgba(54, 162, 235, 0.5)',
+                    borderColor: datos.borderColor || 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { position: 'top' },
+                    title: { display: true, text: datos.label }
+                }
+            }
+        });
+    </script>
+}

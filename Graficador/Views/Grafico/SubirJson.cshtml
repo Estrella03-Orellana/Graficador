@@ -1,0 +1,36 @@
+﻿@{
+    ViewData["Title"] = "Subir Archivo JSON";
+}
+
+<div class="container py-5">
+    <h2 class="text-center mb-4">📁 Subir Archivo JSON</h2>
+
+    <form asp-action="ProcesarJson" asp-controller="Grafico" method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="jsonFile" class="form-label">Selecciona un archivo JSON:</label>
+            <input type="file" class="form-control" id="jsonFile" name="jsonFile" accept=".json" required>
+        </div>
+
+
+        <div class="mb-3">
+            <label for="tipoGrafico" class="form-label">Selecciona el tipo de gráfico:</label>
+            <select class="form-control" id="tipoGrafico" name="TipoGrafico" required>
+                <option value="">Seleccionar...</option>
+                <option value="bar">Barras</option>
+                <option value="line">Líneas</option>
+                <option value="pie">Pie</option>
+                <option value="doughnut">Doughnut</option>
+                <option value="polarArea">Polar Area</option>
+                <option value="radar">Radar</option>
+            </select>
+        </div>
+
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary btn-lg">📊 Generar Gráfico</button>
+        </div>
+    </form>
+
+    <div class="text-center mt-4">
+        <a href="/descargas/datos-ejemplo.json" class="btn btn-outline-info">⬇️ Descargar Ejemplo</a>
+    </div>
+</div>

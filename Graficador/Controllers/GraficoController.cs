@@ -40,6 +40,65 @@ namespace Graficador.Controllers
             return View("IngresarDatos", model);
         }
 
+        [HttpGet]
+        public IActionResult SubirJson()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> SubirJson(IFormFile archivoJson)
+        {
+            if (archivoJson == null || archivoJson.Length == 0)
+            {
+                ViewBag.Mensaje = "Archivo no válido.";
+                return View();
+            }
+
+            using var stream = new StreamReader(archivoJson.OpenReadStream());
+            var contenido = await stream.ReadToEndAsync();
+
+            DatosGraficoJson datos;
+            try
+            {
+                datos = JsonSerializer.Deserialize<DatosGraficoJson>(contenido);
+            }
+            catch (Exception ex)
+            {
+                ViewBag.Mensaje = "Error al leer el JSON: " + ex.Message;
+                return View();
+            }
+
+            ViewBag.Tipo = datos.Tipo;
+            ViewBag.Titulo = datos.Titulo;
+            ViewBag.Etiquetas = JsonSerializer.Serialize(datos.Etiquetas);
+            ViewBag.Valores = JsonSerializer.Serialize(datos.Valores);
+            ViewBag.ValoresSuperiores = JsonSerializer.Serialize(datos.ValoresSuperiores);
+            ViewBag.ValoresInferiores = JsonSerializer.Serialize(datos.ValoresInferiores);
+            ViewBag.BorderRadius = datos.BorderRadius;
+
+            return View("GraficoDesdeJson");
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> ProcesarJson(IFormFile jsonFile, string tipoGrafico)
+        {
+            if (jsonFile == null || jsonFile.Length == 0)
+                return BadRequest("Archivo no válido.");
+
+            using var reader = new StreamReader(jsonFile.OpenReadStream());
+            var contenido = await reader.ReadToEndAsync();
+
+            var datos = JsonSerializer.Deserialize<DatosGraficoJson>(contenido);
+
+            ViewBag.Etiquetas = JsonSerializer.Serialize(datos.Etiquetas);
+            ViewBag.Valores = JsonSerializer.Serialize(datos.Valores);
+            ViewBag.TituloGrafico = datos.Titulo;
+            ViewBag.TipoGrafico = tipoGrafico;
+
+            return View("MostrarGrafico");
+        }
+
     }
 }
 

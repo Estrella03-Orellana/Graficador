@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Graficador.Models;
 using System.Linq;
 using System.Text.Json;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Graficador.Controllers
 {
@@ -43,6 +44,17 @@ namespace Graficador.Controllers
         [HttpGet]
         public IActionResult SubirJson()
         {
+            ViewBag.Categorias = new List<SelectListItem>
+            {
+                new SelectListItem { Text = "Gráficos de Barras", Value = "barras" },
+                new SelectListItem { Text = "Gráficos de Líneas", Value = "lineas" },
+                new SelectListItem { Text = "Gráficos Circulares", Value = "circulares" },
+                new SelectListItem { Text = "Gráficos de Área", Value = "area" },
+                new SelectListItem { Text = "Gráficos Especiales", Value = "especiales" }
+            };
+
+            ViewBag.TiposGrafico = new List<SelectListItem>(); // se llenará con JS según la categoría
+
             return View();
         }
 
@@ -69,7 +81,7 @@ namespace Graficador.Controllers
                 return View();
             }
 
-            ViewBag.Tipo = datos.Tipo;
+            ViewBag.TipoGrafico = datos.Tipo;
             ViewBag.Titulo = datos.Titulo;
             ViewBag.Etiquetas = JsonSerializer.Serialize(datos.Etiquetas);
             ViewBag.Valores = JsonSerializer.Serialize(datos.Valores);
@@ -96,7 +108,16 @@ namespace Graficador.Controllers
             ViewBag.TituloGrafico = datos.Titulo;
             ViewBag.TipoGrafico = tipoGrafico;
 
-            return View("MostrarGrafico");
+            var datosJson = new
+            {
+                labels = datos.Etiquetas,
+                data = datos.Valores,
+                label = datos.Titulo
+            };
+            ViewBag.DatosJson = JsonSerializer.Serialize(datosJson);
+
+
+            return View("MostrarJson");
         }
 
     }

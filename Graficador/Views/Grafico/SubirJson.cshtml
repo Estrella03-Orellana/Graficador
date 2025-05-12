@@ -1,4 +1,6 @@
-﻿@{
+﻿@model Graficador.Models.DatosGraficoJson
+
+@{
     ViewData["Title"] = "Subir Archivo JSON";
 }
 
@@ -7,22 +9,27 @@
 
     <form asp-action="ProcesarJson" asp-controller="Grafico" method="post" enctype="multipart/form-data">
         <div class="mb-3">
-            <label for="jsonFile" class="form-label">Selecciona un archivo JSON:</label>
+            <label for="jsonFile" class="form-label fw-bold">Selecciona un archivo JSON:</label>
             <input type="file" class="form-control" id="jsonFile" name="jsonFile" accept=".json" required>
         </div>
 
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label for="categoriaGrafico" class="form-label fw-bold">Categoría del Gráfico:</label>
+                <select id="categoriaGrafico" class="form-select">
+                    <option value="">Seleccionar Categoría</option>
+                    <option value="barras">Gráficos de Barras</option>
+                    <option value="lineas">Gráficos de Líneas</option>
+                    <option value="escalas">Gráficos de Escalas</option>
+                    <option value="otros">Otros Gráficos</option>
+                </select>
+            </div>
 
-        <div class="mb-3">
-            <label for="tipoGrafico" class="form-label">Selecciona el tipo de gráfico:</label>
-            <select class="form-control" id="tipoGrafico" name="TipoGrafico" required>
-                <option value="">Seleccionar...</option>
-                <option value="bar">Barras</option>
-                <option value="line">Líneas</option>
-                <option value="pie">Pie</option>
-                <option value="doughnut">Doughnut</option>
-                <option value="polarArea">Polar Area</option>
-                <option value="radar">Radar</option>
-            </select>
+            <div class="col-md-6">
+                <label for="tipoGrafico" class="form-label fw-bold">Tipo de Gráfico:</label>
+                <select id="tipoGrafico" name="TipoGrafico" class="form-select"></select>
+                <span asp-validation-for="TipoGrafico" class="text-danger small"></span>
+            </div>
         </div>
 
         <div class="text-center">
@@ -34,3 +41,5 @@
         <a href="/descargas/datos-ejemplo.json" class="btn btn-outline-info">⬇️ Descargar Ejemplo</a>
     </div>
 </div>
+
+<script src="~/js/subirJsonFormulario.js"></script>

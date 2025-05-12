@@ -1,0 +1,17 @@
+{
+  "labels": [ "1", "10", "100" ],
+  "datasets": [
+    {
+      "label": "Crecimiento",
+      "data": [ 1, 10, 100 ],
+      "borderColor": "#f44336"
+    }
+  ],
+  "options": {
+    "scales": {
+      "y": {
+        "type": "logarithmic"
+      }
+    }
+  }
+}

@@ -1,0 +1,88 @@
+﻿@{
+    ViewData["Title"] = "Plantillas JSON";
+}
+
+<div class="container py-5">
+    <h2 class="text-center mb-4">📂 Plantillas JSON por Tipo de Gráfico</h2>
+
+    <p class="lead text-center mb-5">
+        Descarga plantillas JSON listas para usar según el tipo de gráfico que necesites. Estas plantillas te servirán como base para preparar tus propios datos.
+    </p>
+
+    <div class="row g-4">
+        <!-- Barras -->
+        <div class="col-md-6">
+            <div class="border rounded-4 p-4 shadow-sm bg-white h-100">
+                <h5 class="fw-bold mb-3">📊 Gráficos de Barras</h5>
+                <p class="text-muted small mb-3">
+                    Representan comparaciones entre categorías. Ideales para mostrar cantidades, clasificaciones y agrupaciones.
+                </p>
+
+                <ul class="list-unstyled">
+                    <li><a href="~/plantillasJson/bar.json" download>📁 bar.json</a></li>
+                    <li><a href="~/plantillasJson/barrasHorizontales.json" download>📁 barrasHorizontales.json</a></li>
+                    <li><a href="~/plantillasJson/barrasApiladas.json" download>📁 barrasApiladas.json</a></li>
+                    <li><a href="~/plantillasJson/barrasApiladasGrupos.json" download>📁 barrasApiladasGrupos.json</a></li>
+                    <li><a href="~/plantillasJson/barrasBordeRedondeado.json" download>📁 barrasBordeRedondeado.json</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Líneas -->
+        <div class="col-md-6">
+            <div class="border rounded-4 p-4 shadow-sm bg-white h-100">
+                <h5 class="fw-bold mb-3">📈 Gráficos de Líneas</h5>
+                <p class="text-muted small mb-3">
+                    Muestran la evolución de datos en el tiempo o secuencia. Perfectos para tendencias, proyecciones y cambios progresivos.
+                </p>
+
+                <ul class="list-unstyled">
+                    <li><a href="~/plantillasJson/line.json" download>📁 line.json</a></li>
+                    <li><a href="~/plantillasJson/lineaInterpolacion.json" download>📁 lineaInterpolacion.json</a></li>
+                    <li><a href="~/plantillasJson/lineaEstiloPuntos.json" download>📁 lineaEstiloPuntos.json</a></li>
+                    <li><a href="~/plantillasJson/lineaEstiloSegmento.json" download>📁 lineaEstiloSegmento.json</a></li>
+                    <li><a href="~/plantillasJson/lineaEscalonada.json" download>📁 lineaEscalonada.json</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Escalas -->
+        <div class="col-md-6">
+            <div class="border rounded-4 p-4 shadow-sm bg-white h-100">
+                <h5 class="fw-bold mb-3">📏 Gráficos con Escalas</h5>
+                <p class="text-muted small mb-3">
+                    Gráficos de línea o barra con ajustes avanzados en el eje Y, ideales para datos con rangos específicos, pasos personalizados o escalas logarítmicas.
+                </p>
+
+                <ul class="list-unstyled">
+                    <li><a href="~/plantillasJson/escalaLinealMinMax.json" download>📁 escalaLinealMinMax.json</a></li>
+                    <li><a href="~/plantillasJson/escalaLinealMinMaxSugerido.json" download>📁 escalaLinealMinMaxSugerido.json</a></li>
+                    <li><a href="~/plantillasJson/escalaLinealPaso.json" download>📁 escalaLinealPaso.json</a></li>
+                    <li><a href="~/plantillasJson/escalaLogaritmica.json" download>📁 escalaLogaritmica.json</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Otros -->
+        <div class="col-md-6">
+            <div class="border rounded-4 p-4 shadow-sm bg-white h-100">
+                <h5 class="fw-bold mb-3">🧩 Otros Gráficos</h5>
+                <p class="text-muted small mb-3">
+                    Tipos especiales como radar, doughnut o combinados, útiles para comparaciones múltiples o visualizaciones circulares.
+                </p>
+
+                <ul class="list-unstyled">
+                    <li><a href="~/plantillasJson/doughnut.json" download>📁 doughnut.json</a></li>
+                    <li><a href="~/plantillasJson/radar.json" download>📁 radar.json</a></li>
+                    <li><a href="~/plantillasJson/comboBarLinea.json" download>📁 comboBarLinea.json</a></li>
+                    <li><a href="~/plantillasJson/barraLinealApilada.json" download>📁 barraLinealApilada.json</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center mt-5">
+        <a asp-controller="Grafico" asp-action="SubirJson" class="btn btn-outline-primary btn-lg me-3">Subir tu Archivo JSON</a>
+        <a asp-controller="Home" asp-action="Privacy" class="btn btn-secondary btn-lg">Volver a la Guía</a>
+    </div>
+</div>

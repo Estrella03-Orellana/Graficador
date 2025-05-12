@@ -1,0 +1,6 @@
+{
+  "Titulo": "Distribución de Mercado",
+  "Tipo": "doughnut",
+  "Etiquetas": [ "Producto A", "Producto B", "Producto C" ],
+  "Valores": [ 40, 30, 30 ]
+}

@@ -1,6 +1,0 @@
-  {
-    "labels": [ "Enero", "Febrero", "Marzo", "Abril" ],
-    "data": [ 10, 20, 15, 30 ],
-    "label": "Ventas 2025",
-    "backgroundColor": [ "#4e73df", "#1cc88a", "#36b9cc", "#f6c23e" ]
-  }

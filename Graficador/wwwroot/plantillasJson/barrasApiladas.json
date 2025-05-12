@@ -1,0 +1,8 @@
+{
+  "Titulo": "Ventas por Región",
+  "Tipo": "bar",
+  "Etiquetas": [ "Enero", "Febrero", "Marzo" ],
+  "Valores": [ 200, 150, 180 ],
+  "ValoresSuperiores": [ 120, 100, 130 ],
+  "ValoresInferiores": [ 80, 50, 50 ]
+}

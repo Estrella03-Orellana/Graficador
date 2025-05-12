@@ -1,0 +1,17 @@
+{
+  "labels": [ "Ene", "Feb", "Mar" ],
+  "datasets": [
+    {
+      "type": "bar",
+      "label": "Ventas",
+      "data": [ 100, 200, 150 ],
+      "backgroundColor": "#42a5f5"
+    },
+    {
+      "type": "line",
+      "label": "Promedio",
+      "data": [ 150, 180, 130 ],
+      "borderColor": "#ef5350"
+    }
+  ]
+}

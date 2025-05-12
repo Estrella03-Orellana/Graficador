@@ -112,15 +112,43 @@ namespace Graficador.Controllers
             {
                 labels = datos.Etiquetas,
                 data = datos.Valores,
-                label = datos.Titulo
+                label = datos.Titulo,
+                backgroundColor = "rgba(54, 162, 235, 0.2)",  // color de fondo (personalizado)
+                borderColor = "rgba(54, 162, 235, 1)"      // color del borde (personalizado)
             };
             ViewBag.DatosJson = JsonSerializer.Serialize(datosJson);
-
 
             return View("MostrarJson");
         }
 
-    }
+        public ActionResult PlantillasJson()
+        {
+            return View();
+        }
+
+        private readonly string rutaBase = "/Plantillas/";
+
+        public IActionResult Index()
+        {
+            var archivos = Directory.GetFiles(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "plantillasJson"))
+                .Select(path => Path.GetFileName(path))
+                .ToList();
+
+            return View(archivos);
+        }
+
+        public IActionResult Descargar(string nombre)
+        {
+            var rutaCompleta = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Plantillas", nombre);
+
+            if (!System.IO.File.Exists(rutaCompleta))
+                return NotFound();
+
+            var contentType = "application/json";
+            return PhysicalFile(rutaCompleta, contentType, nombre);
+        }
+    
+}
 }
 
 

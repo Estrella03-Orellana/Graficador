@@ -1,0 +1,12 @@
+{
+  "labels": [ "L1", "L2", "L3" ],
+  "datasets": [
+    {
+      "label": "Valores",
+      "data": [ 5, 10, 15 ],
+      "pointStyle": "rectRot",
+      "pointRadius": 8,
+      "borderColor": "#ef5350"
+    }
+  ]
+}

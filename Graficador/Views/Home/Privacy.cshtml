@@ -14,7 +14,7 @@
     <div class="row g-4">
         <!-- Funcionalidad: Crear gráficos personalizados -->
         <div class="col-md-4">
-            <div class="p-4 border rounded-4 bg-white shadow-sm h-100 transition-hover ">
+            <div class="p-4 border rounded-4 bg-white shadow-sm h-100 transition-hover">
                 <h5 class="fw-bold">🎨 Crear Gráficos Personalizados</h5>
                 <p>Elige entre una variedad de tipos de gráficos como barras, líneas, escalas y más, y personalízalos según tus necesidades.</p>
             </div>
@@ -23,21 +23,39 @@
         <!-- Funcionalidad: Ingresar datos -->
         <div class="col-md-4">
             <div class="p-4 border rounded-4 bg-white shadow-sm h-100 transition-hover">
-                <h5 class="fw-bold">📝 Ingresar Datos</h5>
-                <p>Introduce etiquetas y valores de manera sencilla para representar tus datos en los gráficos.</p>
+                <h5 class="fw-bold">📝 Ingresar Datos Manualmente</h5>
+                <p>Introduce etiquetas y valores directamente en un formulario para representar tus datos en los gráficos.</p>
             </div>
         </div>
 
-      
+        <!-- Funcionalidad: Visualizar resultados -->
         <div class="col-md-4">
             <div class="p-4 border rounded-4 bg-white shadow-sm h-100 transition-hover">
                 <h5 class="fw-bold">📊 Visualizar Resultados</h5>
                 <p>Observa tus datos representados gráficamente y realiza ajustes en tiempo real para obtener la visualización deseada.</p>
             </div>
         </div>
+
+        <!-- Funcionalidad: Subir archivo JSON -->
+        <div class="col-md-4">
+            <div class="p-4 border rounded-4 bg-white shadow-sm h-100 transition-hover">
+                <h5 class="fw-bold">📁 Subir Archivo JSON</h5>
+                <p>¿Ya tienes tus datos listos? Puedes cargar un archivo <code>.json</code> con la estructura adecuada y generar el gráfico automáticamente.</p>
+            </div>
+        </div>
+
+        <!-- Funcionalidad: Descargar plantillas JSON -->
+        <div class="col-md-4">
+            <div class="p-4 border rounded-4 bg-white shadow-sm h-100 transition-hover">
+                <h5 class="fw-bold">📂 Descargar Plantillas</h5>
+                <p>Accede a una vista con plantillas JSON específicas para cada tipo de gráfico y descárgalas para usarlas como base.</p>
+            </div>
+        </div>
     </div>
 
     <div class="text-center mt-5">
-        <a asp-controller="Grafico" asp-action="IngresarDatos" class="btn btn-primary btn-lg">Comenzar a Crear un Gráfico</a>
+        <a asp-controller="Grafico" asp-action="IngresarDatos" class="btn btn-primary btn-lg me-3">Crear Gráfico Manualmente</a>
+        <a asp-controller="Grafico" asp-action="SubirJson" class="btn btn-outline-secondary btn-lg me-3">Subir Archivo JSON</a>
+        <a asp-controller="Grafico" asp-action="PlantillasJson" class="btn btn-outline-secondary btn-lg">Ver Plantillas JSON</a>
     </div>
 </div>

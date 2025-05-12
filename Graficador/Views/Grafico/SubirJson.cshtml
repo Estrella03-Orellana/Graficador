@@ -1,6 +1,4 @@
-﻿@model Graficador.Models.DatosGraficoJson
-
-@{
+﻿@{
     ViewData["Title"] = "Subir Archivo JSON";
 }
 
@@ -28,7 +26,7 @@
             <div class="col-md-6">
                 <label for="tipoGrafico" class="form-label fw-bold">Tipo de Gráfico:</label>
                 <select id="tipoGrafico" name="TipoGrafico" class="form-select"></select>
-                <span asp-validation-for="TipoGrafico" class="text-danger small"></span>
+              
             </div>
         </div>
 
@@ -37,9 +35,13 @@
         </div>
     </form>
 
-    <div class="text-center mt-4">
-        <a href="/descargas/datos-ejemplo.json" class="btn btn-outline-info">⬇️ Descargar Ejemplo</a>
-    </div>
+    <br />
+
+    <p>
+        ¿No sabes cómo armar el JSON?
+        <a href="@Url.Action("PlantillasJson", "Grafico")" class="text-blue-600 underline">Revisa nuestras plantillas por tipo de gráfico</a>
+    </p>
+
 </div>
 
 <script src="~/js/subirJsonFormulario.js"></script>

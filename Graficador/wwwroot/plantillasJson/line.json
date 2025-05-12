@@ -1,0 +1,8 @@
+{
+  "Titulo": "Temperaturas Anuales",
+  "Tipo": "line",
+  "Etiquetas": [ "Enero", "Febrero", "Marzo" ],
+  "Valores": [ 22, 25, 20 ],
+  "ValoresSuperiores": [ 23, 26, 21 ],
+  "ValoresInferiores": [ 21, 24, 19 ]
+}

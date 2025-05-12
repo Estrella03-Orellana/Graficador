@@ -1,0 +1,19 @@
+{
+  "labels": [ "Uno", "Dos", "Tres" ],
+  "datasets": [
+    {
+      "label": "Progresión",
+      "data": [ 5, 10, 20 ],
+      "borderColor": "#26a69a"
+    }
+  ],
+  "options": {
+    "scales": {
+      "y": {
+        "ticks": {
+          "stepSize": 5
+        }
+      }
+    }
+  }
+}

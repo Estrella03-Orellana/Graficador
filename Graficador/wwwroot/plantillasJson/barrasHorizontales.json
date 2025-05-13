@@ -1,7 +1,0 @@
-{
-  "Titulo": "Horas Trabajadas",
-  "Tipo": "horizontalBar",
-  "Etiquetas": [ "Pedro", "Lucía", "Juan" ],
-  "Valores": [ 40, 35, 30 ]
-}
-

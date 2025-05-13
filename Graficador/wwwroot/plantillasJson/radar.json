@@ -1,11 +1,8 @@
 {
-  "labels": [ "Fuerza", "Velocidad", "Resistencia", "Inteligencia" ],
-  "datasets": [
-    {
-      "label": "Jugador 1",
-      "data": [ 80, 60, 70, 90 ],
-      "backgroundColor": "rgba(255, 99, 132, 0.2)",
-      "borderColor": "rgba(255, 99, 132, 1)"
-    }
-  ]
+  "Titulo": "Rendimiento del Jugador",
+  "Tipo": "radar",
+  "Etiquetas": [ "Fuerza", "Velocidad", "Resistencia", "Inteligencia" ],
+  "Valores": [ 80, 60, 70, 90 ],
+  "ValoresSuperiores": [ 85, 65, 75, 95 ],
+  "ValoresInferiores": [ 75, 55, 65, 85 ]
 }

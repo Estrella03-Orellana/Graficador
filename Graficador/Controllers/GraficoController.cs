@@ -147,8 +147,15 @@ namespace Graficador.Controllers
             var contentType = "application/json";
             return PhysicalFile(rutaCompleta, contentType, nombre);
         }
-    
-}
+
+
+       //public IActionResult ObtenerDatosJsonGrafico()
+       // {
+       //     var etiquetas = new List<GraficoViewModel>();
+       //     etiquetas.Add(new GraficoViewModel { Etiquetas="Hola", TituloGrafico="Test" });
+       //     return Json(etiquetas);
+       // }
+    }
 }
 
 
